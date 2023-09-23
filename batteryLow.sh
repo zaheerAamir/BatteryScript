@@ -2,7 +2,7 @@
 #!/bin/bash
 
 #Get Battery percentage using acpi:
-battery_percentage=$(acpi -b | grep 'Battery 0' | awk '{print $4}' | tr -d ',' | tr -d '%')
+battery_percentage=$(acpi -b | grep 'Battery 0' | awk '{print $4}' | tr -d ',' | tr -d '%' | bc)
 
 #Check if charger connected is online or not
 adpter_online=$(acpi -a | awk '{print $3}')
